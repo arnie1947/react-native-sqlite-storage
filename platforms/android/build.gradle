@@ -1,7 +1,9 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        // Commented due to error: "Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.".
+        // jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -16,6 +18,7 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
+    namespace 'org.pgsqlite'
     compileSdkVersion safeExtGet('compileSdkVersion', 23)
     buildToolsVersion safeExtGet('buildToolsVersion', '27.0.3')
 
